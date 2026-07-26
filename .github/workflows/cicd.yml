@@ -38,6 +38,10 @@ jobs:
         echo "deb [signed-by=/usr/share/keyrings/trivy.gpg] https://aquasecurity.github.io/trivy-repo/deb generic main" | sudo tee -a /etc/apt/sources.list.d/trivy.list
         sudo apt-get update
         sudo apt-get install trivy -y
+
+    - name: Resolve Maven Dependencies
+      run: mvn dependency:resolve
+  
     - name: Trivy FS Scan
       run: trivy fs --format table -o fs-report.json .
 
