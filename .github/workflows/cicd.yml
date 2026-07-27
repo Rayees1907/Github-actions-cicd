@@ -135,4 +135,4 @@ jobs:
         uses: docker/build-push-action@v7
         with:
           push: true
-          tags: syedrayees/GC-Bank:latest
+          tags: syedrayees/gc-bank:latest
